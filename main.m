@@ -8,11 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-// Debug definition:
-// true = receipt check not run, debug mode
-// false = receipt check run, production mode
-// @todo - change to "false" when going live!
-#define DEBUG true
+// Receiptvalidate definition:
+// true = receipt check run (for App Store)
+// false = receipt check not run (for elsewhere)
+// @todo - change to "true" if submitting to App Store.
+#define RECEIPTVALIDATE false
 
 // link with Foundation.framework
 #import <Foundation/Foundation.h>
@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 
 	// NSLog(@"%@", pathToReceipt); // Enable to show the path from above
 
-	if (!DEBUG && !validateReceiptAtPath(pathToReceipt))
+	if (RECEIPTVALIDATE && !validateReceiptAtPath(pathToReceipt))
 		exit(173);//receipt did not validate
 
 	// NSLog(@"Receipt for Visibility validated correctly!");
