@@ -4,7 +4,7 @@ Visibility is a small Mac OS X Application that allows you to show or hide invis
 
 ## Screenshot
 
-Will be posted soon.
+![Visibility Screenshot](https://raw.github.com/geerlingguy/Visibility/screenshots/visiblity-screenshot-101.jpg)
 
 ## Downloads
 
