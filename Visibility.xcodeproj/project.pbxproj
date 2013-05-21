@@ -15,7 +15,6 @@
 		B035325912E8FA20000209F3 /* Visibility-Icon-128.png in Resources */ = {isa = PBXBuildFile; fileRef = B035325812E8FA20000209F3 /* Visibility-Icon-128.png */; };
 		B035325B12E8FA25000209F3 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = B035325A12E8FA25000209F3 /* Icon.icns */; };
 		C313F03D12D9487800DE35F7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C313F03C12D9487800DE35F7 /* Security.framework */; };
-		C313F07C12D94F3600DE35F7 /* JJGReceiptValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = C313F07B12D94F3600DE35F7 /* JJGReceiptValidate.m */; };
 		C33BC57912D7BD96000AC433 /* JJGFileVisibility.m in Sources */ = {isa = PBXBuildFile; fileRef = C33BC57812D7BD96000AC433 /* JJGFileVisibility.m */; };
 		C37B01BB12D826E60044CA7C /* AppleScriptKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37B01BA12D826E60044CA7C /* AppleScriptKit.framework */; };
 		C37B01BF12D826F00044CA7C /* AppleScriptObjC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C37B01BE12D826F00044CA7C /* AppleScriptObjC.framework */; };
@@ -38,8 +37,6 @@
 		B035325812E8FA20000209F3 /* Visibility-Icon-128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Visibility-Icon-128.png"; sourceTree = "<group>"; };
 		B035325A12E8FA25000209F3 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		C313F03C12D9487800DE35F7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
-		C313F07A12D94F3600DE35F7 /* JJGReceiptValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJGReceiptValidate.h; sourceTree = "<group>"; };
-		C313F07B12D94F3600DE35F7 /* JJGReceiptValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJGReceiptValidate.m; sourceTree = "<group>"; };
 		C33BC57712D7BD96000AC433 /* JJGFileVisibility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JJGFileVisibility.h; sourceTree = "<group>"; };
 		C33BC57812D7BD96000AC433 /* JJGFileVisibility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JJGFileVisibility.m; sourceTree = "<group>"; };
 		C37B01BA12D826E60044CA7C /* AppleScriptKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppleScriptKit.framework; path = /System/Library/Frameworks/AppleScriptKit.framework; sourceTree = "<absolute>"; };
@@ -100,8 +97,6 @@
 		29B97314FDCFA39411CA2CEA /* Visibility */ = {
 			isa = PBXGroup;
 			children = (
-				C313F07A12D94F3600DE35F7 /* JJGReceiptValidate.h */,
-				C313F07B12D94F3600DE35F7 /* JJGReceiptValidate.m */,
 				C33BC57712D7BD96000AC433 /* JJGFileVisibility.h */,
 				C33BC57812D7BD96000AC433 /* JJGFileVisibility.m */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -173,6 +168,9 @@
 /* Begin PBXProject section */
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0460;
+			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Visibility" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -215,7 +213,6 @@
 				8D11072D0486CEB800E47090 /* main.m in Sources */,
 				256AC3DA0F4B6AC300CF3369 /* VisibilityAppDelegate.m in Sources */,
 				C33BC57912D7BD96000AC433 /* JJGFileVisibility.m in Sources */,
-				C313F07C12D94F3600DE35F7 /* JJGReceiptValidate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,9 +242,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -262,13 +261,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Jeff Geerling";
+				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Visibility_Prefix.pch;
 				INFOPLIST_FILE = "Visibility-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = Visibility;
 				VALID_ARCHS = "i386 x86_64";
 			};
@@ -286,8 +288,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -300,8 +301,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Release;

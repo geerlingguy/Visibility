@@ -3,7 +3,7 @@
 //  Visibility
 //
 //  Created by Jeff Geerling on 1/6/11.
-//  Copyright 2011 Midwestern Mac, LLC. All rights reserved.
+//  Copyright 2013 Midwestern Mac, LLC. All rights reserved.
 //
 
 #import "VisibilityAppDelegate.h"
